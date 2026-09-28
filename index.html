@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<meta name="description" content="Mémorial en hommage à Alexander Graham. Allumez une bougie et laissez un message.">
+<title>Alexander Graham – Mémorial</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="portrait"><img src="images/profile.jpg" alt="Portrait d'Alexander Graham" width="220" height="220"></div>
+  <h1>Alexander Graham</h1>
+  <p class="dates"><time datetime="1948-03-14">14 mars 1948</time> – <time datetime="2024-11-02">2 novembre 2024</time></p>
+  <button class="epitaph" id="epitaph" aria-expanded="false">
+    <span class="epitaph-short">« Il a semé de la lumière partout où il passait. »</span>
+    <span class="epitaph-long">Père, ami, conteur. Sa voix, son rire et sa générosité continuent de veiller sur ceux qui l'ont aimé.</span>
+  </button>
+</header>
+
+<main>
+  <section class="reveal candle-section" aria-labelledby="t-candle">
+    <h2 id="t-candle">Une bougie du souvenir</h2>
+    <div class="candle" id="candle" aria-hidden="true">
+      <div class="flame"></div><div class="wick"></div><div class="wax"></div>
+    </div>
+    <button class="btn" id="lightBtn">Allumer une bougie</button>
+    <p class="counter" aria-live="polite"><span id="count">0</span> bougies allumées pour Alexander</p>
+    <p class="thanks" id="thanks" role="status"></p>
+  </section>
+
+  <section class="reveal" aria-labelledby="t-gal">
+    <h2 id="t-gal">Souvenirs</h2>
+    <div class="grid">
+      <button class="thumb" data-full="assets/gallery-1.svg"><img src="images/photo1.jpg" alt="Souvenir 1" loading="lazy" width="400" height="300"></button>
+      <button class="thumb" data-full="assets/gallery-2.svg"><img src="images/photo2.jpg" alt="Souvenir 2" loading="lazy" width="400" height="300"></button>
+      <button class="thumb" data-full="assets/gallery-3.svg"><img src="images/Capture d'écran 2025-09-29 111122.png" alt="Souvenir 3" loading="lazy" width="400" height="300"></button>
+      <button class="thumb" data-full="assets/gallery-4.svg"><img src="images/Capture d'écran 2025-09-29 111333.png" alt="Souvenir 4" loading="lazy" width="400" height="300"></button>
+    </div>
+  </section>
+
+  <section class="reveal" aria-labelledby="t-book">
+    <h2 id="t-book">Livre d'or</h2>
+    <form id="bookForm" autocomplete="off">
+      <label for="name">Votre nom</label>
+      <input id="name" maxlength="40" required>
+      <label for="msg">Votre message</label>
+      <textarea id="msg" rows="4" maxlength="400" required></textarea>
+      <button class="btn" type="submit">Publier le message</button>
+    </form>
+    <ul class="messages" id="messages"></ul>
+  </section>
+</main>
+
+<footer><p>En mémoire d'Alexander Graham</p></footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo agrandie" hidden>
+  <button class="close" id="close" aria-label="Fermer">&times;</button>
+  <img id="lbImg" alt="">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
